@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author AFV - Sena
  */
 public class TiroAlBlanco {
-    char cuadro[][];
+    int cuadro[][];
     int xBlanco;
     int yBlanco;
     boolean hayGanador;
@@ -20,13 +20,12 @@ public class TiroAlBlanco {
     int yTiro;
     
     public TiroAlBlanco(){
-        cuadro = new char[10][10];
+        cuadro = new int[10][10];
         xBlanco = (int)(Math.random()*10);
         yBlanco = (int)(Math.random()*10);
         hayGanador = false;
         do{
-            desplegar();
-            disparar();
+          disparar();
           if(hayGanador)
              JOptionPane.showMessageDialog(null, "Usted gana");
           else{
@@ -41,6 +40,7 @@ public class TiroAlBlanco {
         JOptionPane.showMessageDialog(null, "Distancia "+distan);
     }
     
+<<<<<<< HEAD
     public void desplegar(){
         for(int i=0; i<10; i++){
             System.out.println("+-+-+-+-+-+-+-+-+-+-+");
@@ -51,10 +51,11 @@ public class TiroAlBlanco {
         }
     }
     
+=======
+>>>>>>> parent of cb0490e... version 1.1
     public void disparar(){
         xTiro = Integer.parseInt(JOptionPane.showInputDialog("Digite x"));
         yTiro = Integer.parseInt(JOptionPane.showInputDialog("Digite y"));
-        cuadro[xTiro][yTiro] = '0';
         if(xTiro==xBlanco && yTiro==yBlanco)
             hayGanador = true;
     }
